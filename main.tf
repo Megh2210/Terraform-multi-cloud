@@ -106,7 +106,7 @@ resource "aws_instance" "server" {
     connection {
     type        = "ssh"
     user        = "ubuntu"  # Replace with the appropriate username for your EC2 instance
-    private_key = file("./DevSecOps_1.pem")  # Replace with the path to your private key /workspaces/terraform-manifests/terraform-project/DevSecOps_1.pem
+    private_key = "DevSecOps_1.pem"  # Replace with the path to your private key /workspaces/terraform-manifests/terraform-project/DevSecOps_1.pem
     host        = self.public_ip
   }
 
@@ -119,10 +119,10 @@ resource "aws_instance" "server" {
     inline = [
       "echo 'Hello from the remote instance'",
       "sudo apt update -y",  # Update package lists (for ubuntu)
-      "sudo apt-get install -y python3-pip",  # Example package installation
-      "cd /home/ubuntu",
-      "sudo pip3 install flask",
-      "sudo python3 app.py &",
+      #"sudo apt-get install -y python3-pip",  # Example package installation
+      #"cd /home/ubuntu",
+      #"sudo pip3 install flask",
+      #"sudo python3 app.py &",
     ]
   }
 }
