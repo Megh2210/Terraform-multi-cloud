@@ -110,6 +110,8 @@ resource "aws_instance" "server" {
 
     vpc_security_group_ids = [aws_security_group.webSg.id]
     subnet_id              = aws_subnet.sub1.id
+    sh "pwd"
+    sh "self.public_ip"
 
     connection {
     host        = self.public_ip
@@ -124,7 +126,7 @@ resource "aws_instance" "server" {
     destination = "/home/ubuntu/app.py"  # Replace with the path on the remote instance
   }*/
 
-  provisioner "remote-exec" {
+/*  provisioner "remote-exec" {
     inline = [
       "echo 'Hello from the remote instance'",
       "sudo apt update -y",  # Update package lists (for ubuntu)
@@ -133,6 +135,6 @@ resource "aws_instance" "server" {
       #"sudo pip3 install flask",
       #"sudo python3 app.py &",
     ]
-  }
+  } */
 }
 
