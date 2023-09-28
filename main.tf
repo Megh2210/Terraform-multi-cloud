@@ -114,7 +114,7 @@ resource "aws_instance" "server" {
     connection {
     type        = "ssh"
     user        = "ubuntu"  # Replace with the appropriate username for your EC2 instance
-    private_key = "DevSecOps_1.pem"
+    private_key = "DevSecOps_1"
     host        = self.public_ip 
   }
 
