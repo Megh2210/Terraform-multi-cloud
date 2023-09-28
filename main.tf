@@ -119,20 +119,13 @@ resource "aws_instance" "server" {
     
   }
 
-  /*provisioner "file" {
-    source      = "app.py"  # Replace with the path to your local file
-    destination = "/home/ubuntu/app.py"  # Replace with the path on the remote instance
-  }*/
 
-/*  provisioner "remote-exec" {
+  provisioner "remote-exec" {
     inline = [
       "echo 'Hello from the remote instance'",
       "sudo apt update -y",  # Update package lists (for ubuntu)
-      #"sudo apt-get install -y python3-pip",  # Example package installation
-      #"cd /home/ubuntu",
-      #"sudo pip3 install flask",
-      #"sudo python3 app.py &",
+      "sudo apt-get install -y nginx",  # Example package installation
     ]
-  } */
+  } 
 }
 
