@@ -110,8 +110,6 @@ resource "aws_instance" "server" {
 
     vpc_security_group_ids = [aws_security_group.webSg.id]
     subnet_id              = aws_subnet.sub1.id
-    sh "pwd"
-    sh "self.public_ip"
 
     connection {
     host        = self.public_ip
