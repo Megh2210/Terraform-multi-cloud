@@ -114,7 +114,7 @@ resource "aws_instance" "server" {
     connection {
     type        = "ssh"
     user        = "ubuntu"  # Replace with the appropriate username for your EC2 instance
-    private_key = "DevSecOps_1.pem"  # Replace with the path to your private key /workspaces/terraform-manifests/terraform-project/DevSecOps_1.pem
+    private_key = "/workspaces/terraform-manifests/terraform-automation/DevSecOps_1.pem"  # Replace with the path to your private key /workspaces/terraform-manifests/terraform-project/DevSecOps_1.pem
     host        = self.public_ip
   }
 
