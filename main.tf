@@ -112,12 +112,14 @@ resource "aws_instance" "server" {
     subnet_id              = aws_subnet.sub1.id
 
   provisioner "remote-exec" {
+
     connection {
     type        = "ssh"
     user        = "ubuntu"  # Replace with the appropriate username for your EC2 instance
-    private_key = "DevSecOps_1"
+    private_key = "${file("DevSecOps_1.pem")}"
     host        = self.public_ip 
     }
+
     inline = [
       "echo 'Hello from the remote instance'",
       "sudo apt update -y",  # Update package lists (for ubuntu)
